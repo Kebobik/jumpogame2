@@ -11,9 +11,12 @@ public class PlayerManager : MonoBehaviour
 
     public static Vector2 lastCheckPointPos = new Vector2(-17,8);
 
+    public static int numberOfCoins;
+    public TextMeshProUGUI coinsText;
+
     private void Awake()
     {
-
+        numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
         isGameOver = false;
         GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
 
@@ -21,7 +24,7 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-
+        coinsText.text = numberOfCoins.ToString();
         if (isGameOver)
         {
             gameOverScreen.SetActive(true);

@@ -9,12 +9,13 @@ public class PlayerManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject pauseMenuScreen;
 
- 
+    public static Vector2 lastCheckPointPos = new Vector2(-17,8);
 
     private void Awake()
     {
 
         isGameOver = false;
+        GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
 
     }
 

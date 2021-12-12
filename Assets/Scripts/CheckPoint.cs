@@ -10,6 +10,7 @@ public class CheckPoint : MonoBehaviour
         {
             PlayerManager.lastCheckPointPos = transform.position;
             GetComponent<SpriteRenderer>().color = Color.yellow;
+            AudioManager.instance.Play("Checkpoint");
         }
 
     }

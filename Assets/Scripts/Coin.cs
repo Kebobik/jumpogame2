@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour
         {
             PlayerManager.numberOfCoins++;
             AudioManager.instance.Play("Coins");
-            PlayerPrefs.SetInt("NumberOfCoins", PlayerManager.numberOfCoins);
+            //PlayerPrefs.SetInt("NumberOfCoins", PlayerManager.numberOfCoins);
             Destroy(gameObject);
         }
     }

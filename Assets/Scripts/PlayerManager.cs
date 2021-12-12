@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
+        //numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
         isGameOver = false;
         GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
 

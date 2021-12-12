@@ -17,13 +17,14 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         //numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
+        
         isGameOver = false;
         GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
 
     }
 
     void Update()
-    {
+    {   
         coinsText.text = numberOfCoins.ToString();
         if (isGameOver)
         {
@@ -32,9 +33,9 @@ public class PlayerManager : MonoBehaviour
     }
     public void ReplayLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);    
     }
-    
+
      public void PauseGame()
     {
         Time.timeScale = 0;
@@ -42,8 +43,8 @@ public class PlayerManager : MonoBehaviour
     }
     public void ResumeGame()
     {
-        Time.timeScale = 1;
         pauseMenuScreen.SetActive(false);
+        Time.timeScale = 1;
     }
     public void GoToMenu()
     {

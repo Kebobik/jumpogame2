@@ -23,13 +23,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 direction = ctx.ReadValue<float>();
             };
-        controls.Land.Jump.performed += ctx => Jump();
+       controls.Land.Jump.performed += ctx => Jump();
     }
     
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f,groundLayer);
         animator.SetBool("isGrounded", isGrounded);
         Debug.Log(isGrounded);
@@ -37,14 +38,15 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(direction));
         
         if(isFacingRight && direction <0 || !isFacingRight && direction >0)
-        Flip();
+        Flip(); 
+        
     }
     void Flip()
     {
         isFacingRight = !isFacingRight;
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
-    void Jump()
+     void Jump()
     {
         if (isGrounded)
         {
